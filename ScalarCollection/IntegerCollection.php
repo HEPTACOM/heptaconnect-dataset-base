@@ -29,6 +29,11 @@ final class IntegerCollection extends AbstractCollection
         return (int) \max($this->items);
     }
 
+    /**
+     * Returns the sum of the items.
+     * When an intermediate sum leaves the integer range, the result is not exact, as array_sum continues with a float,
+     * which is cast back to an integer.
+     */
     public function sum(): int
     {
         if ($this->isEmpty()) {
