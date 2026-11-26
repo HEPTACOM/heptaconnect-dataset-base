@@ -13,6 +13,10 @@ use Heptacom\HeptaConnect\Dataset\Base\Support\JsonSerializeObjectVarsTrait;
 use Heptacom\HeptaConnect\Dataset\Base\Support\PrimaryKeyTrait;
 use Heptacom\HeptaConnect\Dataset\Base\Support\SetStateTrait;
 
+/**
+ * Base class of all entities that portal nodes explore, emit and receive.
+ * A change of its primary key is passed on to its attached foreign key references of its own entity type.
+ */
 abstract class DatasetEntityContract implements AttachableInterface, AttachmentAwareInterface, DeferralAwareInterface, PrimaryKeyAwareInterface, \JsonSerializable
 {
     use AttachmentAwareTrait;

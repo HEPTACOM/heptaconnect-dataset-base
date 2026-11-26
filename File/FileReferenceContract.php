@@ -16,6 +16,9 @@ abstract class FileReferenceContract implements AttachableInterface
         $this->portalNodeKey = $portalNodeKey;
     }
 
+    /**
+     * Returns the key of the portal node, in whose context the file reference has been created.
+     */
     public function getPortalNodeKey(): PortalNodeKeyInterface
     {
         return $this->portalNodeKey;
