@@ -15,7 +15,8 @@ namespace Heptacom\HeptaConnect\Dataset\Base\Contract;
 interface CollectionInterface extends \IteratorAggregate, \Countable, \ArrayAccess, \JsonSerializable
 {
     /**
-     * Appends the given items to the end of the collection. Items the collection does not accept are skipped.
+     * Appends the given items to the end of the collection. Collections keyed by an item property, like tagged
+     * collections, replace the item with the same key instead. Items the collection does not accept are skipped.
      *
      * @psalm-param iterable<int, T> $items
      */
