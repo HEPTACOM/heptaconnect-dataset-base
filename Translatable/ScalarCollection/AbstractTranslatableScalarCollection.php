@@ -21,6 +21,10 @@ abstract class AbstractTranslatableScalarCollection extends AbstractTranslatable
     }
 
     /**
+     * Returns the collection of the given locale key.
+     * When there is none, it returns the fallback collection if requested. Otherwise, it stores a new empty collection
+     * under the locale key and returns it, so getLocaleKeys lists the locale key from then on.
+     *
      * @psalm-return T|null
      */
     public function getTranslation(string $localeKey, bool $returnFallback = false)
@@ -42,6 +46,8 @@ abstract class AbstractTranslatableScalarCollection extends AbstractTranslatable
     }
 
     /**
+     * Returns the fallback collection. When there is none, it creates a new empty one.
+     *
      * @psalm-return T
      */
     public function getFallback()

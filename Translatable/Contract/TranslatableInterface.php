@@ -13,7 +13,8 @@ interface TranslatableInterface
 {
     /**
      * Returns the value of the given locale key.
-     * When there is none, it returns the fallback value if requested, otherwise null.
+     * When there is none, it returns the fallback value if requested. Otherwise, the implementation decides what to
+     * return, e.g. null or a new empty value.
      *
      * @deprecated 1.0.0 Invert returnFallback to true
      *
@@ -40,7 +41,7 @@ interface TranslatableInterface
     public function removeTranslation(string $localeKey): TranslatableInterface;
 
     /**
-     * Returns the fallback value, or null when none is set.
+     * Returns the fallback value, which getTranslation returns when requested.
      *
      * @return T|null
      */
