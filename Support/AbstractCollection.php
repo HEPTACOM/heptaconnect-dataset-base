@@ -30,7 +30,7 @@ abstract class AbstractCollection implements CollectionInterface
 
     public static function __set_state(array $an_array)
     {
-        $result = static::createStaticFromArray($an_array);
+        $result = self::createStaticFromArray($an_array);
         /** @var array|mixed $items */
         $items = $an_array['items'] ?? [];
 
@@ -217,6 +217,8 @@ abstract class AbstractCollection implements CollectionInterface
 
     /**
      * Create a new collection of the same type, but without any content.
+     *
+     * @return static
      */
     public function withoutItems(): self
     {
@@ -245,6 +247,12 @@ abstract class AbstractCollection implements CollectionInterface
         }
     }
 
+    /**
+     * @param mixed $item
+     * @param mixed $fallback
+     *
+     * @return mixed
+     */
     protected function executeAccessor($item, ?string $accessor, $fallback)
     {
         if (!\is_string($accessor)) {

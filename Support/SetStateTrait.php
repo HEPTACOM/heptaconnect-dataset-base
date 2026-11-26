@@ -16,7 +16,7 @@ trait SetStateTrait
      */
     public static function __set_state(array $an_array)
     {
-        return static::createStaticFromArray($an_array);
+        return self::createStaticFromArray($an_array);
     }
 
     /**
@@ -55,8 +55,6 @@ trait SetStateTrait
                 if ($initialValue instanceof CollectionInterface && $value instanceof CollectionInterface) {
                     $initialValue->push($value);
                 }
-            } catch (\Throwable $ignored) {
-                continue;
             }
 
             if ($value === null) {

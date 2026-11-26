@@ -35,12 +35,15 @@ final class IntegerCollection extends AbstractCollection
             return 0;
         }
 
-        return (int) \array_sum($this->items);
+        // array_sum() returns a float when the sum leaves the integer range
+        /** @var float|int $sum */
+        $sum = \array_sum($this->items);
+
+        return (int) $sum;
     }
 
     protected function isValidItem($item): bool
     {
-        /* @phpstan-ignore-next-line treatPhpDocTypesAsCertain checks soft check but this is the hard check */
         return \is_int($item);
     }
 }

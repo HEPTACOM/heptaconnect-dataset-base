@@ -23,7 +23,7 @@ abstract class AbstractTranslatable implements \ArrayAccess, \JsonSerializable, 
      */
     protected array $translations = [];
 
-    /**
+    /*
      * @deprecated 1.0.0 Uncomment to allow deserialization
      * @psalm-var T|null
      * protected $fallback = null;
@@ -34,7 +34,7 @@ abstract class AbstractTranslatable implements \ArrayAccess, \JsonSerializable, 
      */
     public static function __set_state(array $an_array)
     {
-        $result = static::createStaticFromArray($an_array);
+        $result = self::createStaticFromArray($an_array);
         /** @var array|mixed $items */
         $items = $an_array['translations'] ?? [];
 

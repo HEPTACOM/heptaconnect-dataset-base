@@ -8,7 +8,6 @@ namespace Heptacom\HeptaConnect\Dataset\Base\Contract;
  * Ordered list of items, that can be iterated, counted, accessed like an array and serialized as JSON.
  *
  * @template T
- * @extends iterable<int, T>
  * @extends \ArrayAccess<int, T>
  * @extends \IteratorAggregate<int, T>
  */
@@ -72,9 +71,11 @@ interface CollectionInterface extends \IteratorAggregate, \Countable, \ArrayAcce
     /**
      * Yields the return value of the given callback for each item. The callback receives the item and its key.
      *
-     * @psalm-param callable(T, array-key):mixed|callable(T):mixed $mapFn
+     * @template TMapped
      *
-     * @return iterable<int, T>
+     * @psalm-param callable(T, array-key): TMapped $mapFn
+     *
+     * @return iterable<int, TMapped>
      */
     public function map(callable $mapFn): iterable;
 

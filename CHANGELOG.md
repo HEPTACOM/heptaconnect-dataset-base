@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Document at the parameter `$returnFallback` of `\Heptacom\HeptaConnect\Dataset\Base\Translatable\Contract\TranslatableInterface::getTranslation`, that its default changes to `true` in 1.0.0, instead of marking the whole method deprecated
+- Document the template of `\Heptacom\HeptaConnect\Dataset\Base\Translatable\ScalarCollection\AbstractTranslatableScalarCollection` as a `\Heptacom\HeptaConnect\Dataset\Base\Contract\CollectionInterface`
+- Document the item type of the result of `\Heptacom\HeptaConnect\Dataset\Base\Contract\CollectionInterface::map` as the return type of its callback, instead of the item type of the collection
+
 ### Deprecated
 
 ### Removed

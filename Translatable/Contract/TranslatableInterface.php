@@ -16,7 +16,7 @@ interface TranslatableInterface
      * When there is none, it returns the fallback value if requested. Otherwise, the implementation decides what to
      * return, e.g. null or a new empty value.
      *
-     * @deprecated 1.0.0 Invert returnFallback to true
+     * @param bool $returnFallback defaults to true from 1.0.0 on, so pass it explicitly
      *
      * @return T|null
      */

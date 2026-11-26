@@ -15,7 +15,7 @@ abstract class AbstractTaggedCollection extends AbstractCollection
 {
     /**
      * @psalm-param array-key $offset
-     * @psalm-return TagItem
+     * @psalm-return TagItem<T>
      */
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
@@ -48,7 +48,6 @@ abstract class AbstractTaggedCollection extends AbstractCollection
 
     protected function isValidItem($item): bool
     {
-        /* @phpstan-ignore-next-line treatPhpDocTypesAsCertain checks soft check but this is the hard check */
         return \is_object($item) && $item instanceof TagItem && \is_a($item->getCollection(), $this->getCollectionType(), false);
     }
 

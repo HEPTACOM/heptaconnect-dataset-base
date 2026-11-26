@@ -8,7 +8,7 @@ use Heptacom\HeptaConnect\Dataset\Base\Contract\CollectionInterface;
 use Heptacom\HeptaConnect\Dataset\Base\Translatable\AbstractTranslatable;
 
 /**
- * @template T
+ * @template T of CollectionInterface
  * @extends AbstractTranslatable<T>
  *
  * @property T $fallback
@@ -61,7 +61,7 @@ abstract class AbstractTranslatableScalarCollection extends AbstractTranslatable
     }
 
     /**
-     * @psalm-return T&CollectionInterface
+     * @psalm-return T
      */
     abstract protected function getInitialValue(): CollectionInterface;
 }
